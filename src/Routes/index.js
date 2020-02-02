@@ -1,7 +1,9 @@
 "use-strict";
 const express = require("express");
 const Route = express.Router();
-const userRouter = require('./users');
+const user = require('./users');
+const booking = require('./books');
+const class_route = require('./classes');
 
 Route.get('/', (req, res) => {
     res.json({
@@ -9,6 +11,8 @@ Route.get('/', (req, res) => {
     });
 });
 
-Route.use('/user', userRouter);
+Route.use('/user', user);
+Route.use('/book', booking);
+Route.use('/class', class_route);
 
 module.exports = Route;

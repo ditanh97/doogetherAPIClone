@@ -2,7 +2,7 @@
 const Sequelize = require("sequelize");
 const sequelize = require('../Config/database');
 
-const Users = sequelize.define("users", {
+const Classes = sequelize.define("classes", {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -10,29 +10,26 @@ const Users = sequelize.define("users", {
     name: {
         type: Sequelize.STRING
     },
-    email: {
-        type: Sequelize.STRING
-    },
-    username: {
-        type: Sequelize.STRING
-    },
-    password: {
-        type: Sequelize.STRING
-    },
-    gender_id: {
+    sport_id: {
         type: Sequelize.INTEGER
-    },
-    dob: {
-        type: Sequelize.DATE
     },
     image: {
         type: Sequelize.STRING
     },
-    lat: {
-        type: Sequelize.DECIMAL
+    about: {
+        type: Sequelize.STRING
     },
-    ltg: {
-        type: Sequelize.DECIMAL
+    note: {
+        type: Sequelize.STRING
+    },
+    price: {
+        type: Sequelize.INTEGER
+    },
+    venue_id: {
+        type: Sequelize.INTEGER
+    },
+    capacity: {
+        type: Sequelize.INTEGER
     },
     created: {
         type: Sequelize.DATE,
@@ -47,4 +44,4 @@ const Users = sequelize.define("users", {
     timestamps: false
 });
 
-module.exports = Users;
+module.exports = Classes;

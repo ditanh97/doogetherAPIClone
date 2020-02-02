@@ -2,37 +2,31 @@
 const Sequelize = require("sequelize");
 const sequelize = require('../Config/database');
 
-const Users = sequelize.define("users", {
+const Books = sequelize.define("booking", {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
     },
-    name: {
+    booking_uuid: {
         type: Sequelize.STRING
     },
-    email: {
-        type: Sequelize.STRING
-    },
-    username: {
-        type: Sequelize.STRING
-    },
-    password: {
-        type: Sequelize.STRING
-    },
-    gender_id: {
+    total_price: {
         type: Sequelize.INTEGER
     },
-    dob: {
-        type: Sequelize.DATE
+    promo_id: {
+        type: Sequelize.INTEGER
     },
-    image: {
-        type: Sequelize.STRING
+    paymethod_id: {
+        type: Sequelize.INTEGER
     },
-    lat: {
-        type: Sequelize.DECIMAL
+    status_id: {
+        type: Sequelize.INTEGER
     },
-    ltg: {
-        type: Sequelize.DECIMAL
+    class_id: {
+        type: Sequelize.INTEGER
+    },
+    pay_user_id: {
+        type: Sequelize.INTEGER
     },
     created: {
         type: Sequelize.DATE,
@@ -47,4 +41,4 @@ const Users = sequelize.define("users", {
     timestamps: false
 });
 
-module.exports = Users;
+module.exports = Books;

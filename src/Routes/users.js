@@ -2,10 +2,12 @@
 const Router = require('express');
 const router = Router();
 const userController = require("../Controllers/users.controller");
-
+const verify = require('../Middleware/verifyToken');
 
 router
-    .post("/register", userController.registerUsers);
+    .get("/", verify, userController.getAllUsers)
+    .post("/register", userController.registerUser)
+    .post("/login", userController.loginUser)
 
 module.exports = router;
 
